@@ -20,10 +20,10 @@ $list = new InputAdapterCollection(
     new \ArrayObject(['alpha', 'beta', 'gamma', 'delta'])
 );
 
-$elementsPerPage = 2
+$elementsPerPage = 2;
 $page = 1;
 
-$pagination = (new Paginator($this->input, $elementsPerPage))->paginate($page)->elements());
+$pagination = (new Paginator($list, $elementsPerPage))->paginate($page)->elements();
 // Returns \ArrayObject(['gamma', 'delta']));
 
 ?>
@@ -31,18 +31,6 @@ $pagination = (new Paginator($this->input, $elementsPerPage))->paginate($page)->
 
 ## Installation
 
-Add the repository into your composer.json
-
-```json
-"repositories":[
-    {
-        "type": "vcs",
-        "url": "git@github.com:shano/paginator.git"
-    }
-]
-```
-
-Then run to install the package
 
 ```bash
 composer require shano/paginator
